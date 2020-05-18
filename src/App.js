@@ -5,16 +5,23 @@ import './App.css';
 function App() {
     
     const [words, setWords] = useState('')
-
+    const [timeRemaining, setTimeRemaining]  = useState(5)
     
     function handleChange(e)  {
       e.preventDefault()
       const {value} = e.target
       setWords(value)
     }
-       
+
+    function wordCount(str) {
+      const wordsArr = str.trim().split(" ")
+        return wordsArr.filter(word => word !== "").length
+    }
+
+   
     
-    console.log(words)
+    
+   
 
   return (
     <div className="App">
@@ -23,8 +30,8 @@ function App() {
      onChange={handleChange}
      value={words}
      />
-     <h4>Time remaining: </h4>
-     <button>Start</button>
+     <h4>Time remaining: {timeRemaining} </h4>
+     <button onClick={() => console.log(wordCount(words))}>Start</button>
      <h1>Word Count</h1>
   
     </div>
