@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 
 import './App.css';
 
@@ -18,7 +18,11 @@ function App() {
         return wordsArr.filter(word => word !== "").length
     }
 
-   
+   useEffect(() => {
+     setTimeout(() => {
+       setTimeRemaining(time => time === 0 ? 0 : time -1)
+     }, 1000)
+   }, [timeRemaining])
     
     
    
