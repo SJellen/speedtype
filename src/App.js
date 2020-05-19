@@ -6,6 +6,8 @@ function App() {
     
     const [words, setWords] = useState('')
     const [timeRemaining, setTimeRemaining]  = useState(5)
+
+    const [clockStart, setClockStart] = useState(false)
     
     function handleChange(e)  {
       e.preventDefault()
@@ -18,11 +20,38 @@ function App() {
         return wordsArr.filter(word => word !== "").length
     }
 
-   useEffect(() => {
-     setTimeout(() => {
-       setTimeRemaining(time => time === 0 ? 0 : time -1)
-     }, 1000)
-   }, [timeRemaining])
+    
+
+
+    
+      useEffect(() => {
+        if(clockStart && timeRemaining > 0) {
+          setTimeout(() => {
+            setTimeRemaining(time => time === 0 ? 0 : time -1)
+          }, 1000)
+        } else if (timeRemaining === 0) {
+          setClockStart(false)
+        }
+       
+      }, [timeRemaining, clockStart])
+
+
+
+      console.log(clockStart)
+
+
+
+      
+
+ 
+   
+
+    
+    
+
+  
+
+
     
     
    
@@ -35,7 +64,7 @@ function App() {
      value={words}
      />
      <h4>Time remaining: {timeRemaining} </h4>
-     <button onClick={() => console.log(wordCount(words))}>Start</button>
+     <button onClick={() => setClockStart(true)}>Start</button>
      <h1>Word Count</h1>
   
     </div>
