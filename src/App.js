@@ -3,11 +3,12 @@ import React, { useState, useEffect } from 'react';
 import './App.css';
 
 function App() {
-    
+    const START_TIME = 5
+    const [stopButton, setStopButton] = useState(false)
     const [words, setWords] = useState('')
-    const [timeRemaining, setTimeRemaining]  = useState(5)
-
+    const [timeRemaining, setTimeRemaining]  = useState(START_TIME)
     const [clockStart, setClockStart] = useState(false)
+    const [endWordCount, setEndWordCount] = useState(0)
     
     function handleChange(e)  {
       e.preventDefault()
@@ -18,6 +19,21 @@ function App() {
     function wordCount(str) {
       const wordsArr = str.trim().split(" ")
         return wordsArr.filter(word => word !== "").length
+    }
+    
+
+    function startButton() {
+      setClockStart(true)
+      setEndWordCount(0)
+      setTimeRemaining(START_TIME)
+      setWords('') 
+      setStopButton(true)
+    }
+
+    function endGame() {
+      setClockStart(false)
+      setEndWordCount(wordCount(words))
+      setStopButton(false)
     }
 
     
@@ -30,44 +46,36 @@ function App() {
             setTimeRemaining(time => time === 0 ? 0 : time -1)
           }, 1000)
         } else if (timeRemaining === 0) {
-          setClockStart(false)
+          endGame()
         }
+
        
       }, [timeRemaining, clockStart])
 
 
 
-      console.log(clockStart)
+      
 
 
 
       
 
- 
-   
-
-    
-    
-
-  
-
-
-    
-    
-   
-
   return (
-    <div className="App">
-     <h1>Speed Typer 88</h1>
-     <textarea 
-     onChange={handleChange}
-     value={words}
-     />
-     <h4>Time remaining: {timeRemaining} </h4>
-     <button onClick={() => setClockStart(true)}>Start</button>
-     <h1>Word Count</h1>
-  
-    </div>
+        <div className="App">
+            <h1>Speed Typer 88</h1>
+                <textarea 
+                  onChange={handleChange}
+                  value={words}
+                  disabled={!stopButton} 
+                />
+            <h4>Time remaining: {timeRemaining} </h4>
+                <button 
+                    disabled={stopButton} 
+                    onClick={startButton}>Start
+                </button>
+            <h1>Word Count {endWordCount}</h1>
+      
+        </div>
   );
 }
 
