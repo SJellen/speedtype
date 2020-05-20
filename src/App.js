@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 
 import './App.css';
 
@@ -9,6 +9,7 @@ function App() {
     const [timeRemaining, setTimeRemaining]  = useState(START_TIME)
     const [clockStart, setClockStart] = useState(false)
     const [endWordCount, setEndWordCount] = useState(0)
+    const inputRef = useRef(null)
     
     function handleChange(e)  {
       e.preventDefault()
@@ -28,6 +29,8 @@ function App() {
       setTimeRemaining(START_TIME)
       setWords('') 
       setStopButton(true)
+      inputRef.current.disabled = false
+      inputRef.current.focus()
     }
 
     function endGame() {
@@ -67,6 +70,7 @@ function App() {
                   onChange={handleChange}
                   value={words}
                   disabled={!stopButton} 
+                  ref={inputRef}
                 />
             <h4>Time remaining: {timeRemaining} </h4>
                 <button 
