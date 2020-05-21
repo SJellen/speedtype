@@ -2,7 +2,7 @@
 
 
 html, body {
-  background: black;
+  /* background: black; */
   color: #00b800;
   margin:0;
   padding: 0;
@@ -11,9 +11,18 @@ html, body {
   text-align: center;
 }
 
+
+
 body {
   font-weight: 400;
+  padding: 2rem 2rem;
+  
+  
 }
+
+
+
+
 
 .button {
   font-weight: 700;
@@ -25,36 +34,53 @@ button {
   display: block;
   margin: 0 auto;
   border: none;
-  background: #a80020;
-  background: #00b800;
+
   padding: 10px 20px;
   text-transform: uppercase;
 }
 
-button:hover {
-  cursor: pointer;
-}
-
-button:disabled:hover {
-  cursor: not-allowed;
-}
 
 h1 {
   font-size: 20px;
   text-align:center;
 }
+.speed {
+  padding: 2rem 0;
+}
+
+h4 {
+  padding: 2rem 0;
+}
+
+.wordCount {
+  padding: 2rem 0 1rem 0;
+}
+.highScore {
+  padding: .5rem 0;
+}
 
 textarea {
   font-family: 'Press Start 2P', cursive;
   border: 3px solid black;
-  width: 90%;
+  width: 60%;
   margin: 0 auto;
   outline: none;
   height: 200px;
-  background: #00b800;
+  background: #0000FF;
   padding: 10px;
+  color: white;
 }
 
 textarea:disabled {
   background: silver;
+  color: gray;
+}
+
+@media only screen and (max-width: 500px) {
+  body {
+    padding: 0;
+  }
+  textarea {
+    width: 90%;
+  }
 }
