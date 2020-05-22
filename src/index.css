@@ -2,8 +2,6 @@
 
 
 html, body {
-  /* background: black; */
-  color: #00b800;
   margin:0;
   padding: 0;
   padding-top: 10px;
@@ -11,17 +9,10 @@ html, body {
   text-align: center;
 }
 
-
-
 body {
   font-weight: 400;
-  padding: 2rem 2rem;
-  
-  
+  padding: 2rem 2rem; 
 }
-
-
-
 
 
 .button {
@@ -45,7 +36,8 @@ h1 {
   text-align:center;
 }
 .speed {
-  padding: 2rem 0;
+  padding: 1rem 0;
+  font-size: 3rem;
 }
 
 h4 {
@@ -82,5 +74,10 @@ textarea:disabled {
   }
   textarea {
     width: 90%;
+  }
+
+  .speed {
+    font-size: 1.5rem;
+    padding: 0;
   }
 }

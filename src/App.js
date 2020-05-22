@@ -10,7 +10,9 @@ function App() {
   return (
    
        <div className="App nes-container is-dark with-title">
-            <h1 className="speed ">Speed Typer 88</h1>
+            <h1 className="speed ">Speed Typer `85</h1>
+
+            <h4>How fast can you type?</h4>
             
                 <textarea 
                   
@@ -27,6 +29,7 @@ function App() {
                     onClick={startButton}>{button}
                 </button>
             <h1 className="wordCount">Word Count {endWordCount}</h1>
+            <i class="nes-icon trophy is-large"></i>
             <h1 className="highScore nes-text is-success">High Score {highScore}</h1>
       
         </div>

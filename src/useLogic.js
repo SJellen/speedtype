@@ -1,6 +1,6 @@
 import {useState, useEffect, useRef} from 'react'
 
-
+localStorage.getItem('myData');
 
  function useLogic() {
     const START_TIME = 10
@@ -11,7 +11,16 @@ import {useState, useEffect, useRef} from 'react'
     const [endWordCount, setEndWordCount] = useState(0)
     const inputRef = useRef(null)
     const [button, setButton] = useState("Start")
-    const [highScore, setHighScore] = useState(0)
+    const [highScore, setHighScore] = useState(localStorage.getItem('myData'))
+
+
+
+
+
+// localStorage.setItem('myData', highScore);
+ 
+
+// localStorage.getItem('myData');
     
     function handleChange(e)  {
       e.preventDefault()
@@ -43,6 +52,7 @@ import {useState, useEffect, useRef} from 'react'
       setButton("Start")
       if (endWordCount > highScore) {
         setHighScore(endWordCount)
+        
       }
     }
 
@@ -57,10 +67,11 @@ import {useState, useEffect, useRef} from 'react'
           }, 1000)
         } else if (timeRemaining === 0) {
           endGame()
+          localStorage.setItem('myData', highScore);
         }
 
        
-      }, [timeRemaining, clockStart])
+      }, [timeRemaining, clockStart, highScore])
 
       return {handleChange, words, stopButton, inputRef, timeRemaining, startButton, endWordCount, button, highScore}
 }
