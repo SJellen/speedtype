@@ -1,4 +1,6 @@
 <h1 align="center">Welcome to Speed Typer `85 👋</h1>
+
+![screenshot](https://github.com/SJellen/speedtype/blob/master/public/ScreenShot.png)
 <p>
   <img alt="Version" src="https://img.shields.io/badge/version-0.1.0-blue.svg?cacheSeconds=2592000" />
   <a href="https://twitter.com/scottjellen" target="_blank">
@@ -34,7 +36,7 @@ yarn run test
 
 👤 **Scott Jellen**
 
-* Website: scottjellen.me
+* Website: scottjellen.com
 * Twitter: [@scottjellen](https://twitter.com/scottjellen)
 * Github: [@SJellen](https://github.com/SJellen)
 
