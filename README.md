@@ -1,18 +1,11 @@
 <h1 align="center">Welcome to Speed Typer `85 👋</h1>
 
 ![screenshot](https://github.com/SJellen/speedtype/blob/master/public/ScreenShot.png)
-<p>
-  <img alt="Version" src="https://img.shields.io/badge/version-0.1.0-blue.svg?cacheSeconds=2592000" />
-  <a href="https://twitter.com/scottjellen" target="_blank">
-    <img alt="Twitter: scottjellen" src="https://img.shields.io/twitter/follow/scottjellen.svg?style=social" />
-  </a>
-</p>
+
 
 > A speed typing game with Nes.css
 
-### 🏠 [Homepage](https://speedtype.now.sh)
 
-### ✨ [Demo](https://speedtype.now.sh)
 
 ## Install
 
@@ -34,11 +27,6 @@ yarn run test
 
 ## Author
 
-👤 **Scott Jellen**
-
-* Website: scottjellen.com
-* Twitter: [@scottjellen](https://twitter.com/scottjellen)
-* Github: [@SJellen](https://github.com/SJellen)
 
 ## Show your support
 
